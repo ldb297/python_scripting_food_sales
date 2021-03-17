@@ -1,0 +1,2 @@
+# python_scripting_food_sales
+practicing_scripting_with_python
