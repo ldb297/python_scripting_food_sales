@@ -78,6 +78,22 @@ def read_city():
             f.write(city)
             f.write('\n')
             
+def read_category():
+    all_categories = []
+    with open('sampledatafoodsales.csv') as f:
+        data = f.readlines()
+
+        for food_sale in data:
+            split_food_sale = food_sale.split(',')
+            order_category = split_food_sale[3]
+            all_categories.append(order_category)
+    print(all_categories)
+
+    with open('categories.txt', 'a') as f:
+        for category in all_categories:
+            f.write(category)
+            f.write('\n')
+
 
 if __name__ == '__main__':
     #read_only()
