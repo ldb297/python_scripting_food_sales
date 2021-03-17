@@ -94,9 +94,30 @@ def read_category():
             f.write(category)
             f.write('\n')
 
+def read_product():
+    all_products = []
+    with open('sampledatafoodsales.csv') as f:
+        data = f.readlines()
+
+        for food_sale in data:
+            split_food_sale = food_sale.split(',')
+            order_product = split_food_sale[4]
+            all_products.append(order_product)
+    print(all_products)
+
+    with open('products.txt', 'a') as f:
+        for product in all_products:
+            f.write(product)
+            f.write('\n')
+
+
 
 if __name__ == '__main__':
     #read_only()
     #write_only()
     #read_food_sales()
-    append_text()
+    #append_text()
+    #read_region()
+    #read_city()
+    #read_category()
+    read_product()
